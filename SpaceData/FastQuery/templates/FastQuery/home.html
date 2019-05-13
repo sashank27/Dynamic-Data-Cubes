@@ -1,0 +1,19 @@
+{% extends 'FastQuery/base.html' %}
+
+{% block homeblock %} class="menu-active" {% endblock %}
+
+{% block content %}
+
+    <section id="hero" class="wow fadeIn">
+        <div class="hero-container">
+            <h1>You have just found FastQuery</h1>
+            <h2>Manipulated Gaia-Tycho-2 Data</h2>
+            <a href="{% url 'FastQuery:Query' %}" class="btn-get-started scrollto">Get Started</a>
+            <div class="btns">
+                <a href="{% url 'FastQuery:Dataset' %}"><i style="font-size: 20px;" class="fas fa-cloud-download-alt"></i> &nbsp; Dataset</a>
+                <a href="https://github.com/dumbape" target="_blank"><i style="font-size: 20px;" class="fab fa-github"></i> &nbsp; Github</a>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

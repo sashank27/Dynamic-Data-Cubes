@@ -1,0 +1,61 @@
+{% extends 'FastQuery/base.html' %}
+
+{% block queryblock %} class="menu-active" {% endblock %}
+
+{% block content %}
+
+    <div class="container" style="margin-top: 2%;">
+
+        <section id="get-started" class="padd-section text-center" style="margin-top: 2%;">
+
+        <div class="container">
+          <div class="section-title text-center">
+
+            <h2><b>Query</b></h2>
+            <p class="separator" style="font-size: 20px;">Experience FastQuery</p>
+
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="row">
+
+            <div class="col-md-6 col-lg-4">
+              <div class="feature-block">
+
+                <h4 style="font-size: 22px;">Query 1</h4>
+                <p style="font-size: 18px;">Neighbourhood of a Data Cube</p>
+                <a class="btn btn-light" href="{% url 'FastQuery:Query1' %}" style="font-size: 18px;">Check Out</a>
+
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <div>
+
+                <h3>We currently support 2 kinds of queries</h3>
+
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <div class="feature-block">
+
+                <h4 style="font-size: 22px;">Query 2</h4>
+                <p style="font-size: 18px;">Stars within a distance</p>
+                <a class="btn btn-light" href="{% url 'FastQuery:Query2' %}" style="font-size: 18px;">Check Out</a>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+
+
+    </div>
+
+
+
+{% endblock %}

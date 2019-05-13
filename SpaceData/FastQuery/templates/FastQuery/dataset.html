@@ -1,0 +1,41 @@
+{% extends 'FastQuery/base.html' %}
+
+{% block datasetblock %} class="menu-active" {% endblock %}
+
+{% block content %}
+
+    <section id="features" class="padd-section text-center" style="margin-top: 2%;">
+        <div class="container border border-light rounded">
+            <div style="margin-top: 2%;">
+                <div class="section-title text-center">
+                    <h2><strong>DATASET</strong></h2>
+
+                    <p class="separator" style="font-size: 20px;">Manipulated Data - <b>Open Sourced</b></p>
+                </div>
+            </div>
+
+            <table class="table table-striped border rounded">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">File</th>
+                        <th scope="col">Size</th>
+                        <th scope="col">Download</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for file in files %}
+                        <tr>
+                            <th scope="row">{{ forloop.counter }}</th>
+                            <td>{{ file.filename }}</td>
+                            <td>{{ file.filesize }} MB</td>
+                            <td><a href="{% url 'FastQuery:Download' %}?file={{ file.filename }}">Download</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    </section>
+
+{% endblock %}
