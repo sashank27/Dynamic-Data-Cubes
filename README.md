@@ -15,7 +15,7 @@ Type 3 - Cube side - 4096 light years - present uptill 32768 light years from th
 
 The average density of stars in a cube (stars / cube) comes down to a little over 100 with this design. The highest number of stars present in any cube is a little over 10000. 
 
-The data structure can be visualized as a graph with cubes being its nodes. As a result, there are edges from a cube to its neighbours. We store, for every cube, its neighbours (may be greater than 26 too due to non uniform cubes). The implementation can be found in the C++ file - `DataCube.cpp`. Running this file outputs the datastructure in a file. star_0.csv, star_1.csv, ....., star_20.csv contain star information - their location (3 dimensional coordinates) and the information about which cube they belong to (We recognize each cube by its bottom-leftmost point).
+The data structure can be visualized as a graph with cubes being its nodes. As a result, there are edges from a cube to its neighbours. We store, for every cube, its neighbours (may be greater than 26 too due to non uniform cubes). The implementation can be found in the C++ file - `DataCube.cpp`. Running this file outputs the required data to create the data structure in several files. These files are present in the folder `Data` star_0.csv, star_1.csv, ....., star_20.csv contain star information - their location (3 dimensional coordinates) and the information about which cube they belong to (We recognize each cube by its bottom-leftmost point).
 
 # Queries
 
@@ -27,12 +27,47 @@ Query Type 2: Given any point in space in 3 dimensional form, the data structure
 
 The naive method of traversing the entire dataset takes about 1.5 seconds on a average, whereas the Dynamic Data Cubes can answer the same query in less than 0.1 seconds. At worst cases, the times taken by both the methods in the same, but Dynamic Data Cubes return results faster on average cases.
 
+# User Interface
+
+We provide the user to query the Gaia Tycho data stored in Dynamic Data Cubes via a web application. Below are the details of the user interface:
+
+* Back-End Technologies: Python Django
+* Front-End Technologies: HTML, CSS, BootStrap, JavaScript
+
 # Screenshots
 
 ![scr1](https://github.com/dumbape/Dynamic-Data-Cubes/blob/master/Home.png?raw=true)
 ![scr2](https://github.com/dumbape/Dynamic-Data-Cubes/blob/master/DATASET.png?raw=true)
 ![scr3](https://github.com/dumbape/Dynamic-Data-Cubes/blob/master/Q1.png?raw=true)
 ![scr4](https://github.com/dumbape/Dynamic-Data-Cubes/blob/master/Q2.png?raw=true)
+
+# Install
+
+* git clone https://github.com/dumbape/Dynamic-Data-Cubes.git
+
+* Change the directory to the cloned folder - `Dynamic-Data-Cubes`
+
+* (Optional, but recommended) Create a virtal environment and switch to over to it.
+
+* Make sure to have pip installed in your system (or in the environment).
+
+* Run `pip install -r requirements.txt`
+
+* Switch to the folder `Space Data`
+  
+* RUN `python manage.py runserver`
+
+* Open `http://localhost:8000/` in any browser
+
+# Credits
+
+Dynamic Data Cubes has made use of data from the European Space Agency (ESA) mission Gaia (https://www.cosmos.esa.int/gaia), processed by the Gaia Data Processing and Analysis Consortium (DPAC, https://www.cosmos.esa.int/web/gaia/dpac/consortium). Funding for the DPAC has been provided by national institutions, in particular the institutions participating in the Gaia Multilateral Agreement.
+
+Front End Template - eStartup - https://bootstrapmade.com/demo/eStartup/
+
+# Future Work
+
+The Dynamic Data Cubes is open sourced and uses the Gaia Data to provide a base for further research. Anybody is free to suggest any modifications, fork the repo and make pull requests. In addition to storing the neighbours and the stars in the cube, we may also store the number of stars in each cube. Hence, from any random point in 3D space, if we keep moving towards high density neighbours until we find a local maxima, we may be able to find the spiral arms of the galaxy and the peaks.  
 
 
 
