@@ -12,9 +12,9 @@ The logical structure can be seen as a large matrix made up of several small mat
 
 It is observed from the 3D coordinates, that about 50% of stars are nearer to the Sun, within 2000 light year radius. About 90% of the total stars are within 8000 light year radius and the rest are scattered. Using uniform cubes would result in varying star density per cube, hence this gives the motivation to design a large matrix with cubes inside, but not of uniform sides. The matrix is of size 65536 * 65536 * 65536 (all units in light years) with the sun as centre. There are 3 types of cubes that constitute the entire matrix.
 
-Type 1 - Cube side - 256 light years - present uptill 2048 light years from the centre on all sides. 
-Type 2 - Cube side - 1024 light years - present uptill 8192 light years from the centre on all sides.
-Type 3 - Cube side - 4096 light years - present uptill 32768 light years from the centre on all sides.
+* Type 1 - Cube side - 256 light years - present uptill 2048 light years from the centre on all sides. 
+* Type 2 - Cube side - 1024 light years - present uptill 8192 light years from the centre on all sides.
+* Type 3 - Cube side - 4096 light years - present uptill 32768 light years from the centre on all sides.
 
 The average density of stars in a cube (stars / cube) comes down to a little over 100 with this design. The highest number of stars present in any cube is a little over 10000. More than a hundred cubes are empty.
 
