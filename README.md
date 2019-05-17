@@ -8,12 +8,14 @@ The raw data available at Gaia Archive was processed to obtain 3 dmensional coor
 
 # Data Structure
 
-It is observed from the 3D coordinates, that about 50% of stars are nearer to the Sun, within 2000 light year radius. About 90% of the total stars are within 8000 light year radius and the rest are scattered. Using uniform cubes would result is varying star density per cube, hence this gives the motivation to design a large matrix with cubes inside, but not of uniform sides. The matrix is of size 65536 * 65536 * 65536 (all units in light years) with the sun as centre. There are 3 types of cubes that constitute the entire matrix.
+The logical structure can be seen as a large matrix made up of several small matrices (called cubes from this point onwards). The cubes are not all identical, they have different side lengths, which would be described shortly. Each cube holds zero or more stars. Each cube spans a certain area in space and contains the data of all stars that lie within its region. The coordinates of Sun are (0, 0, 0).
+
+It is observed from the 3D coordinates, that about 50% of stars are nearer to the Sun, within 2000 light year radius. About 90% of the total stars are within 8000 light year radius and the rest are scattered. Using uniform cubes would result in varying star density per cube, hence this gives the motivation to design a large matrix with cubes inside, but not of uniform sides. The matrix is of size 65536 * 65536 * 65536 (all units in light years) with the sun as centre. There are 3 types of cubes that constitute the entire matrix.
 Type 1 - Cube side - 256 light years - present uptill 2048 light years from the centre on all sides. 
 Type 2 - Cube side - 1024 light years - present uptill 8192 light years from the centre on all sides.
 Type 3 - Cube side - 4096 light years - present uptill 32768 light years from the centre on all sides.
 
-The average density of stars in a cube (stars / cube) comes down to a little over 100 with this design. The highest number of stars present in any cube is a little over 10000. 
+The average density of stars in a cube (stars / cube) comes down to a little over 100 with this design. The highest number of stars present in any cube is a little over 10000. More than a hundred cubes are empty.
 
 The data structure can be visualized as a graph with cubes being its nodes. As a result, there are edges from a cube to its neighbours. We store, for every cube, its neighbours (may be greater than 26 too due to non uniform cubes). The implementation can be found in the C++ file - `DataCube.cpp`. Running this file outputs the required data to create the data structure in several files. These files are present in the folder `Data` star_0.csv, star_1.csv, ....., star_20.csv contain star information - their location (3 dimensional coordinates) and the information about which cube they belong to (We recognize each cube by its bottom-leftmost point).
 
