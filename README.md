@@ -69,7 +69,7 @@ Front End Template - eStartup - https://bootstrapmade.com/demo/eStartup/
 
 In addition to storing the neighbours and the stars in the cube, we may also store the number of stars in each cube. Hence, from any random point in 3D space, if we keep moving towards high density neighbours until we find a local maxima, we MAY BE able to find a spiral arm of the galaxy and the peaks.  
     
-The project is open for any suggestions and pull requests. 
+    # The project is open for any suggestions and pull requests. 
 
 
 
