@@ -1,4 +1,4 @@
-# Dynamic-Data-Cubes
+# Dynamic Data Cubes
 
 Dynamic Data Cubes is a hybrid data structure capable of storing Gaia Tycho data. You can read more about Gaia Tycho data here - https://en.wikipedia.org/wiki/Tycho-2_Catalogue. Gaia archive is available for download here - https://gea.esac.esa.int/archive/
 
@@ -65,9 +65,11 @@ Dynamic Data Cubes has made use of data from the European Space Agency (ESA) mis
 
 Front End Template - eStartup - https://bootstrapmade.com/demo/eStartup/
 
-# Future Work
+# Future Work - Finding a sprial arm of the galaxy
 
-The Dynamic Data Cubes is open sourced and uses the Gaia Data to provide a base for further research. Anybody is free to suggest any modifications, fork the repo and make pull requests. In addition to storing the neighbours and the stars in the cube, we may also store the number of stars in each cube. Hence, from any random point in 3D space, if we keep moving towards high density neighbours until we find a local maxima, we may be able to find the spiral arms of the galaxy and the peaks.  
+    In addition to storing the neighbours and the stars in the cube, we may also store the number of stars in each cube. Hence, from any random point in 3D space, if we keep moving towards high density neighbours until we find a local maxima, we MAY BE able to find a spiral arm of the galaxy and the peaks.  
+    
+The project is open for any suggestions and pull requests. 
 
 
 
