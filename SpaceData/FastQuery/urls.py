@@ -11,6 +11,7 @@ urlpatterns = [
     path('query', views.QueryView.as_view(), name = 'Query'),
     path('query1', views.Query1View.as_view(), name = 'Query1'),
     path('query2', views.Query2View.as_view(), name = 'Query2'),
+    path('query3', views.Query3View.as_view(), name = 'Query3'),
     path('naive', views.NaiveView.as_view(), name = 'Naive'),
 
 ]

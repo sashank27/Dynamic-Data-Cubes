@@ -10,3 +10,8 @@ class Query2Form(forms.Form):
     y = forms.FloatField(required = True)
     z = forms.FloatField(required = True)
     radius = forms.FloatField(required = True)
+
+class Query3Form(forms.Form):
+    x = forms.FloatField(required = True)
+    y = forms.FloatField(required = True)
+    z = forms.FloatField(required = True)

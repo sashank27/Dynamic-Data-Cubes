@@ -1,0 +1,9 @@
+venv/*
+myvenv/*
+
+.vscode/
+.idea/*
+
+SpaceData/SpaceData/__pycache__/
+SpaceData/FastQuery/__pycache__/
+SpaceData/FastQuery/migrations/

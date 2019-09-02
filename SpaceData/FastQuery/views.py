@@ -7,7 +7,7 @@ from . import utils
 import os
 import time
 
-from FastQuery import generic, query1, query2
+from FastQuery import generic, query1, query2, query3
 from SpaceData.wsgi import star_info, cube_info, neighbour_info
 from FastQuery.datatype import Star, Cube, StarInfo
 
@@ -117,6 +117,32 @@ class Query2View(View):
 
             elif 'list' in request.POST:
                 return render(request, self.template_name, {'form': form, 'stars': len(stars), 'list': stars, 'time': end_time - start_time})
+        else:
+            return render(request, self.template_name, {'form': form, 'err': 1, 'msg': 'Invalid Submission'})
+
+class Query3View(View):
+    template_name = 'FastQuery/query3.html'
+
+    def get(self, request):
+        form = forms.Query3Form()
+        return render(request, self.template_name, {'form': form})
+
+    def post(self, request):
+        form = forms.Query3Form(request.POST)
+        if form.is_valid():
+            x = float(form.cleaned_data.get('x'))
+            y = float(form.cleaned_data.get('y'))
+            z = float(form.cleaned_data.get('z'))
+            cube = generic.get_cube_id(x, y, z)
+            if cube == Cube(-1, -1, -1, -1):
+                return render(request, self.template_name, {'form': form, 'err': 1, 'msg': 'Cube dimension not supported'})
+
+            start_time = time.time()
+            stars = query3.find_spiral_arm(cube, x, y, z)
+            end_time = time.time()
+
+            return render(request, self.template_name, {'form': form, 'stars': len(stars), 'list': stars, 'time': end_time - start_time})
+        
         else:
             return render(request, self.template_name, {'form': form, 'err': 1, 'msg': 'Invalid Submission'})
 

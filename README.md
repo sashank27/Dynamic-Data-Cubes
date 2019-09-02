@@ -68,7 +68,7 @@ Dynamic Data Cubes has made use of data from the European Space Agency (ESA) mis
 
 Front End Template - eStartup - https://bootstrapmade.com/demo/eStartup/
 
-# Future Work - Finding a sprial arm of the galaxy
+# Future Work - Finding a spiral arm of the galaxy
 
 In addition to storing the neighbours and the stars in the cube, we may also store the number of stars in each cube. Hence, from any random point in 3D space, if we keep moving towards high density neighbours until we find a local maxima, we MAY BE able to find a spiral arm of the galaxy and the peaks.  
     
